@@ -13,6 +13,8 @@ namespace DapperExemplo.Infra.Contracts
         Task<IEnumerable<Pet>> GetAllAsync();
         Task<Pet> UpdateByIdAsync(Pet pet);
         Task<Pet> DeleteByIdAsync(Guid id);
+        Task<IEnumerable<Pet>> DeleteAllAsync();
+
         
     }
 }

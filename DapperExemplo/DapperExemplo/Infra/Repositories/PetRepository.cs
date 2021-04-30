@@ -72,6 +72,15 @@ namespace DapperExemplo.Infra.Repositories
             using var connection = _connection.Connection();
             return (await connection.QueryFirstOrDefaultAsync<Pet>(sql, parameters));
         }
+
+        // DeleteAll
+        public async Task<IEnumerable<Pet>> DeleteAllAsync()
+        {
+            const string sql = "DELETE FROM Pet";
+
+            using var connection = _connection.Connection();
+            return await connection.QueryAsync<Pet>(sql);
+        }
  
     }
 }

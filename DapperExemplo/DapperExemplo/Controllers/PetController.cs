@@ -49,10 +49,18 @@ namespace DapperExemplo.Controllers
             return Ok(pet);
         }
         
-        [HttpDelete]
+        [HttpDelete(template:"id")]
         public async Task<IActionResult> DeleteByIdAsync(Guid id)
         {
             await _repository.DeleteByIdAsync(id);
+
+            return Ok();
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> DeleteAllAsync()
+        {
+            await _repository.DeleteAllAsync();
 
             return Ok();
         }
